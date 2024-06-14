@@ -5,10 +5,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -28,8 +29,7 @@ a,
 
 /* DESKTOP-NAV */
 
-nav,
-.nav-links {
+nav, .nav-links {
     display: flex;
 }
 
@@ -70,6 +70,8 @@ a:hover {
 
 #hamburger-nav {
     display: none;
+    position: relative;
+    z-index: 1000; /* Ensures it is above other content */
 }
 
 .hamburger-menu {
@@ -101,8 +103,8 @@ a:hover {
     width: fit-content;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    z-index: 1000; /* Ensure menu is on top */
+    transition: max-height 0.3s ease-in-out;
+    z-index: 999; /* Ensures it appears above other elements */
 }
 
 .menu-links a {
@@ -139,7 +141,6 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -227,19 +228,20 @@ section {
 .btn-color-1:hover,
 .btn-color-2:hover {
     cursor: pointer;
-    background: rgb(53, 53, 53);
+}
+
+.btn-color-1:hover {
+    background: rgb(108, 106, 106);
     color: white;
 }
 
 .btn-color-2:hover {
+    background: rgb(0, 0, 0);
+    color: white;
     border: rgb(255, 255, 255) 0.1rem solid;
 }
 
-.btn-container {
-    gap: 1rem;
-}
-
-/* About Section  */
+/* About Section */
 
 #About {
     position: relative;
@@ -294,6 +296,4 @@ section {
 }
 
 .section__pic-container {
-    height: 400px;
-    width: 400px;
-    margin: auto 0;
+    height
